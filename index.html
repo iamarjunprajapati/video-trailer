@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video trailer</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="body-container w-full h-[100vh] bg-black flex flex-col justify-center items-center text-white">
+        <div class="trailer-container lg:w-[45%] overflow-hidden rounded relative">
+            <img src="https://images.pexels.com/photos/3062545/pexels-photo-3062545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                alt="" srcset="" class="mb-5">
+            <h1 class="text-4xl mb-3">Movie Title</h1>
+            <p class="mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam architecto temporibus,
+                placeat odit, amet hic optio blanditiis omnis expedita neque itaque aliquid quae molestiae quam ducimus
+                ratione odio veniam provident.</p>
+            <button class="bg-white rounded text-black px-4 py-2" id="watch-now">Watch now</button>
+        </div>
+        <div class="video absolute w-full h-[100vh] top-0 transition z-10 flex justify-center hidden bg-black">
+            <video src="https://demo.100jsprojects.com/video-trailer-popup/trailer.mp4" muted controls
+                class="w-[70%]"></video>
+            <div class="h-full pt-10">
+                <i class="ri-close-line cursor-pointer text-4xl" id="close"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        let closeButton = document.querySelector('#close');
+        let video = document.querySelector('.video');
+        let watchNow = document.querySelector('#watch-now');
+        closeButton.addEventListener('click', () => {
+            video.style.display = "none";
+        });
+        watchNow.addEventListener('click', () => {
+            console.log('working');
+            video.style.display = "flex";
+        })
+    </script>
+</body>
+</html>
